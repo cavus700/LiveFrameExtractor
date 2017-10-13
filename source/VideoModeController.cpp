@@ -94,6 +94,9 @@ void VideoWidget::openVideoClicked(){
         }
     }
     
+    m_ui->sldVideo->setValue(static_cast<int>(0));
+    m_mw->getImageScene().clearRect();
+    
     QObject::connect(m_vidController, SIGNAL( processedImage(QImage) ), m_mw, SLOT( setImage(QImage) ));
     QObject::connect(m_vidController, SIGNAL( videoProgress(double) ), this, SLOT( sliderUpdate(double) ));
     QObject::connect(m_vidController, SIGNAL( savingProgress(int) ), this, SLOT( savingProgressUpdate(int) ));

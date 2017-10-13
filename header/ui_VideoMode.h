@@ -433,7 +433,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         groupBox_4->setToolTip(QApplication::translate("VideoWidget", "Saved images will be resized to NxN", 0));
 #endif // QT_NO_TOOLTIP
-        groupBox_4->setTitle(QApplication::translate("VideoWidget", "GroupBox", 0));
+        groupBox_4->setTitle(QApplication::translate("VideoWidget", "Time/Size/Saving", 0));
         label_8->setText(QApplication::translate("VideoWidget", "Time offset", 0));
 #ifndef QT_NO_TOOLTIP
         editOffset->setToolTip(QApplication::translate("VideoWidget", "Set the time offset for image extraction in msec", 0));

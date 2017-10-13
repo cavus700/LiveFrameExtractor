@@ -24,6 +24,7 @@ public:
     QString resizeRectangle(int width, int height);
     void renameRectangle(QString);
     void setEnableDragMode(bool enable);
+    void clearRect();
     void clear();
 
     void setRectangles(QList<QGraphicsRectItem*>& rectList);

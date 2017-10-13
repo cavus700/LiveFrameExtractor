@@ -2,7 +2,7 @@
 #define JSONCONTROLLER_H
 
 #define OPACITY 0.4
-#define FILE_NAME "/setting.json"
+#define FILE_NAME "/settings.json"
 
 #include <QGraphicsRectItem>
 #include <QList>

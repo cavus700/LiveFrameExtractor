@@ -209,7 +209,7 @@
           <string>Saved images will be resized to NxN</string>
          </property>
          <property name="title">
-          <string>GroupBox</string>
+          <string>Time/Size/Saving</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item>

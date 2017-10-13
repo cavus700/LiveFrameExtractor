@@ -20,6 +20,13 @@ ImageScene::~ImageScene(){
     }
 }
 
+void ImageScene::clearRect(){
+    if(m_selectedRect){
+        m_selectedRect->setBrush(QBrush(Qt::blue));
+        m_selectedRect = nullptr;
+    }
+}
+
 void ImageScene::clear(){
     qDeleteAll( this->items() );
     m_rects.clear();
