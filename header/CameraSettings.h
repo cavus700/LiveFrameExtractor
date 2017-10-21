@@ -17,6 +17,7 @@ public:
     QString loadAreasPath;
     QString saveDirectoryPath;
     QStringList savePaths;
+    QString recordingPath;
     bool isStreaming;
     bool isRecording;
     bool isExtracting;

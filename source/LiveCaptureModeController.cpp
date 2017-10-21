@@ -194,7 +194,7 @@ void LiveCaptureWidget::startRecClicked(){
     if(m_currentCamera->controller->startRecording()){
         m_ui->btnStartRec->setEnabled(false);
         m_ui->btnStopRec->setEnabled(true);
-        printInfo("Started recording video: \n  " + m_currentCamera->controller->getSettings().saveDirectoryPath);
+        printInfo("Started recording video: \n  " + m_currentCamera->controller->getSettings().recordingPath);
     }
     else{
         printInfo("Error: Couldn't start recording please try again and check your settings");

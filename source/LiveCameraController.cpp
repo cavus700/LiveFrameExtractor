@@ -143,17 +143,17 @@ bool LiveCameraController::startRecording(){
         return false;
     
     //Find name for new video file
-    QString file = m_settings.saveDirectoryPath + "/video" + QString::number(m_settings.cameraId);
+    m_settings.recordingPath = m_settings.saveDirectoryPath + "/video" + QString::number(m_settings.cameraId);
     int num = 0;
-    QFileInfo check_file(file + "_" + QString::number(num) + ".mp4");
+    QFileInfo check_file(m_settings.recordingPath + "_" + QString::number(num) + ".avi");
 
     while(check_file.exists() && check_file.isFile()){
         num++;
-        
+        check_file.setFile(m_settings.recordingPath + "_" + QString::number(num) + ".avi");
         if(num > 10000)
             return false;
     }
-    file += "_" + QString::number(num) + ".avi";
+    m_settings.recordingPath += "_" + QString::number(num) + ".avi";
       
     // Acquire input size   
     Size S = Size((int) m_capture->get(CV_CAP_PROP_FRAME_WIDTH),    
@@ -161,7 +161,7 @@ bool LiveCameraController::startRecording(){
 
     //Open video writer
     m_vidWriter = new VideoWriter();
-    m_vidWriter->open(file.toUtf8().constData(), CV_FOURCC('M','J','P','G'), m_capture->get(CV_CAP_PROP_FPS), S, true);
+    m_vidWriter->open(m_settings.recordingPath.toUtf8().constData(), CV_FOURCC('M','J','P','G'), m_capture->get(CV_CAP_PROP_FPS), S, true);
 
     if (!m_vidWriter->isOpened())
     {
